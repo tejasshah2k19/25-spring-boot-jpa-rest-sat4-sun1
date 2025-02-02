@@ -1,0 +1,24 @@
+create project ->
+			lombok
+			spring web 
+			devTools 
+			
+download postman 
+install postman 
+
+signup in postman 
+
+create a controller , entity folder 
+create UserEntity -> userId,fn,em,pwd field 
+create SessionController -> @RestController -> 
+						@Postmapping("signup") 
+						XXXXXX 
+						
+--------------------------------------------
+
+database -> 
+	1) mysql driver 
+	2) hibernate - spring data jpa 
+	3) application.properties 
+	
+	
