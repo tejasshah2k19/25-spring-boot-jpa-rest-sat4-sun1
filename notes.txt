@@ -21,4 +21,59 @@ database ->
 	2) hibernate - spring data jpa 
 	3) application.properties 
 	
-	
+----------------------------------------------------------
+private : public 
+
+REST API : 
+
+		public url -> any one can access / no login required 
+		private url -> restricted  / login mandatory 
+		
+		
+		http://localhost:9999/signup -> new user 
+		
+		http://localhost:9999/users  -> db all users 
+		http://localhost:9999/myprofile
+		
+		
+		authorization -> private url -> access ? 
+		
+-----------------------------------------------------------		
+		
+		
+		
+post public/signup
+post public/login 
+get admin/users
+get admin/users/1
+delete admin/users/1
+get user/demo 
+
+--------------------------------------------------------------	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

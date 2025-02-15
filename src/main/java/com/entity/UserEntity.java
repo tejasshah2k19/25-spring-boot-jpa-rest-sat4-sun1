@@ -18,5 +18,5 @@ public class UserEntity {
 	String firstName;
 	String email;
 	String password;
-
+	String token;
 }
