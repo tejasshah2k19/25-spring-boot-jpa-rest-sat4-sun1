@@ -19,4 +19,5 @@ public class UserEntity {
 	String email;
 	String password;
 	String token;
+	String role; 
 }

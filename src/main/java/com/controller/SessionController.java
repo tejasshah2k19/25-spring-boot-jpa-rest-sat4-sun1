@@ -15,6 +15,7 @@ import com.repository.UserRepository;
 import com.service.TokenService;
 //s/w -> rest client -> postman 
 //os -> android , ios 
+import com.util.JwtUtil;
 
 @RestController
 @RequestMapping("/public")
@@ -28,11 +29,14 @@ public class SessionController {
 	@Autowired
 	TokenService tokenService;
 	
+	@Autowired
+	JwtUtil jwt;
 	@PostMapping("signup")
 	public UserEntity signup(@RequestBody UserEntity user) {
 		// validation
 		System.out.println("signup api");
 		// db save
+
 		userRepository.save(user);
 
 		return user;// json
@@ -45,11 +49,12 @@ public class SessionController {
 		if (op.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(user);
 		} else {
-			String token = tokenService.generateToken(16);
+			String token = jwt.generateToken(user.getEmail());
 			UserEntity dbUser = op.get();
 			dbUser.setToken(token);
 			userRepository.save(dbUser);
-			return ResponseEntity.ok(dbUser);
+			return ResponseEntity.status(HttpStatus.OK).header("token", token).body(dbUser);
+			
 		}
 	}
 
